@@ -6,7 +6,7 @@ import 'dotenv/config';
 export const signup = async (req, res) => {
     const {email, password, role = "user"} = req.body;
 
-    if(!email || !password || !role){
+    if(!email || !password){
         return res.status(400).json({error : 'Missing fields'});
     }
 
