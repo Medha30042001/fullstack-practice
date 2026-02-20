@@ -16,7 +16,7 @@ const Signup = ({ setPage }) => {
       }),
         setPage("login"));
     } catch (err) {
-        alert(err.response?.data?.error || "Signup Failed");
+      alert(err.response?.data?.error || "Signup Failed");
     }
   };
 
@@ -56,7 +56,7 @@ const Signup = ({ setPage }) => {
             <option value="admin">Admin</option>
           </select>
 
-          <div className="flex gap-5 items-center justify-center pt-4">
+          <div className="flex flex-col gap-2 pt-6">
             <button
               onClick={signup}
               className="bg-black py-1 px-4 rounded-md text-white w-35 hover:bg-gray-600 transition"
@@ -64,14 +64,20 @@ const Signup = ({ setPage }) => {
               Signup
             </button>
 
-            <button
-              onClick={() => setPage("login")}
-              className="bg-blue-500 py-1 px-4 rounded-md text-white hover:bg-blue-700 transition"
-            >
-              Login
-            </button>
+            <div className="text-sm flex items-center justify-center gap-1">
+              <span>Already registered?</span>
+              <button
+                onClick={() => setPage("login")}
+                className="text-blue-500 hover:underline"
+              >
+                Login
+              </button>
+            </div>
           </div>
+
         </div>
+
+        
       </div>
     </>
   );

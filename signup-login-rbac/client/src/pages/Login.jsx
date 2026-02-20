@@ -8,7 +8,8 @@ const Login = ({ setPage }) => {
 
   const login = async () => {
     const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {
-        email, password
+      email,
+      password,
     });
 
     localStorage.setItem("token", res.data.token);
@@ -42,16 +43,25 @@ const Login = ({ setPage }) => {
             className="border p-2 rounded"
           />
 
-          <div className="flex gap-4 justify-center pt-5">
+          <div className="flex flex-col pt-5 gap-2">
             <button
               onClick={login}
               className="bg-black text-white py-1 px-3 rounded w-30 hover:bg-gray-700 transition"
-            >Login</button>
+            >
+              Login
+            </button>
 
-            <button onClick={() => setPage("signup")} 
-            className="bg-blue-500 py-1 px-4 rounded-md text-white hover:bg-blue-700 transition">
-                Go to signup</button>
+            <div className="flex items-center justify-center gap-1 text-sm">
+              <span>Not registered yet?</span>
+              <button
+                onClick={() => setPage("signup")}
+                className="text-blue-500 hover:underline"
+              >
+                Go to signup
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
     </>
