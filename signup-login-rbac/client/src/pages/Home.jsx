@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const Home = () => {
+const Home = ({setPage}) => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("Hello");
 
@@ -19,8 +19,8 @@ const Home = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err.response?.data));
+      .then((res) => console.log(res.data.message))
+      .catch((err) => console.log(err.response?.data?.error));
   }, []);
 
   if (error) {
@@ -37,7 +37,7 @@ const Home = () => {
       <button
         onClick={() => {
           localStorage.removeItem("token");
-          window.location.reload();
+          setPage("login");
         }}
         className="bg-red-700 py-1 px-4 rounded-md text-white w-35 hover:bg-red-400 transition"
       >

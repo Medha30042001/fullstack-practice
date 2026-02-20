@@ -14,7 +14,7 @@ function App() {
     <>
         {page === 'login' && <Login setPage={setPage}/>}
         {page === 'signup' && <Signup setPage={setPage}/>}
-        {page === 'home' && <Home />}
+        {page === 'home' && <Home setPage={setPage} />}
         {/* If page === 'login' → true
             → React renders <Login />
 

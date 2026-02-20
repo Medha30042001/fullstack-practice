@@ -9,12 +9,12 @@ const Signup = ({ setPage }) => {
 
   const signup = async () => {
     try {
-      (await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {
         email,
         password,
         role,
-      }),
-        setPage("login"));
+      });
+      setPage("login");
     } catch (err) {
       alert(err.response?.data?.error || "Signup Failed");
     }
