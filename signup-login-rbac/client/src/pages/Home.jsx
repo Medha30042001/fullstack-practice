@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 const Home = () => {
 
     useEffect(() => {
-        axios.get("https://signup-login-rbac.onrender.com/auth/home", {
+        axios.get(`${import.meta.env.VITE_API_URL}/auth/home`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

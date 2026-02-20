@@ -9,7 +9,7 @@ const Signup = ({ setPage }) => {
 
   const signup = async () => {
     try {
-      (await axios.post("https://signup-login-rbac.onrender.com/auth/signup", {
+      (await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, {
         email,
         password,
         role,
