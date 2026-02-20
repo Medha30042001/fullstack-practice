@@ -39,6 +39,7 @@ const Home = () => {
           localStorage.removeItem("token");
           window.location.reload();
         }}
+        className="bg-red-700 py-1 px-4 rounded-md text-white w-35 hover:bg-red-400 transition"
       >
         Logout
       </button>
