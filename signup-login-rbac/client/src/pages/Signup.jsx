@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 const Signup = ({ setPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("user");
   const signupRef = useRef(null);
 
   const signup = async () => {
