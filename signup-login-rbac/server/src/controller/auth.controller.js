@@ -7,7 +7,7 @@ export const signup = async (req, res) => {
     const {email, password, role = "user"} = req.body;
 
     if(!email || !password){
-        return res.status(400).json({error : 'Missing fields'});
+        return res.status(400).json({error : `Missing fields ${req.body}`});
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
