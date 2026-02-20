@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 
 export const signup = async (req, res) => {
-    const {email, password, role} = req.body;
+    const {email, password, role = "user"} = req.body;
 
     if(!email || !password || !role){
         return res.status(400).json({error : 'Missing fields'});

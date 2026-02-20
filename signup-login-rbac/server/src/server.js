@@ -14,3 +14,7 @@ app.use('/auth', authRoutes);
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+//https://signup-login-rbac.vercel.app/
+//https://signup-login-rbac.onrender.com/
+//signup-login-rbac-59v7j17uv-medha30042001s-projects.vercel.app
