@@ -7,7 +7,7 @@ const Login = ({ setPage }) => {
   const loginRef = useRef(null);
 
   const login = async () => {
-    const res = await axios.post("http://localhost:4000/auth/login", {
+    const res = await axios.post("https://signup-login-rbac.onrender.com/auth/login", {
         email, password
     });
 

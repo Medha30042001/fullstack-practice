@@ -9,7 +9,7 @@ const Signup = ({ setPage }) => {
 
   const signup = async () => {
     try {
-      (await axios.post("http://localhost:4000/auth/signup", {
+      (await axios.post("https://signup-login-rbac.onrender.com/auth/signup", {
         email,
         password,
         role,

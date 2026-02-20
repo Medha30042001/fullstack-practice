@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 const Home = () => {
 
     useEffect(() => {
-        axios.get("http://localhost:4000/auth/home", {
+        axios.get("https://signup-login-rbac.onrender.com/auth/home", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }
