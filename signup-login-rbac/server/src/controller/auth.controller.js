@@ -4,17 +4,19 @@ import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 
 export const signup = async (req, res) => {
-    const {email, password, role = "user"} = req.body;
+    const {email, password, role} = req.body;
 
     if(!email || !password){
-        return res.status(400).json({error : `Missing fields ${req.body}`});
+        return res.status(400).json({error : `Missing fieldss`});
     }
+
+    const userRole = role || "user";
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const {error} = await supabase
         .from('ussers')
-        .insert({email, password : hashedPassword, role});
+        .insert({email, password : hashedPassword, role : userRole});
 
     if(error){
         if(error.code === '23505'){
